@@ -1,0 +1,52 @@
+<html>
+
+<body>
+    <h1>Навигация</h1>
+    <div class="top_bar">
+        <a href="/all_task">Все задачи</a>
+        <br>
+        <a href="/active_task">Активные задачи</a>
+        <br>
+        <a href="/finish_task">Завершённые задачи</a>
+    </div>
+
+    <h1>Список всех задач:</h1>
+    <form action="/add_task" method="post">
+        <label for="print_task_name">Введите название задачи:</label>
+        <input type="text" name="task_name_str">
+        <input type="submit" value="add task">
+    </form>
+
+    
+    <ul id="list_all_task">
+        
+        <li>
+            
+            <label for="task_name">Купить хлеб</label>
+            
+
+        </li>
+        
+        <li>
+            
+            <form action=/set_finish_status/1 method="post">
+                <label for="task_name">Купить молоко</label>
+                <!-- <input type="text" name="username"> -->
+                <input type="submit" value="Finish">
+            </form>
+            
+
+        </li>
+        
+        <li>
+            
+            <label for="task_name">Купить масло</label>
+            
+
+        </li>
+        
+    </ul>
+    
+</body>
+
+</html>

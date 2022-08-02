@@ -1,0 +1,37 @@
+<html>
+
+<body>
+    <h1>Навигация</h1>
+    <div class="top_bar">
+        <a href="/all_task">Все задачи</a>
+        <br>
+        <a href="/active_task">Активные задачи</a>
+        <br>
+        <a href="/finish_task">Завершённые задачи</a>
+    </div>
+
+    <h1>Список завершённых задач:</h1>
+
+    {% if todo_list != [] %}
+    <ul id="list_all_task">
+        {% for task_name in todo_list %}
+        <li>
+            {% if task_name.status == "FINISH" %}
+            <label for="task_name">{{task_name.name}}</label>
+            {% else %}
+            <form action=/set_finish_status/{{task_name.id_task}} method="post">
+                <label for="task_name">{{task_name.name}}</label>
+                <!-- <input type="text" name="username"> -->
+                <input type="submit" value="Finish">
+            </form>
+            {% endif %}
+
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    Все дела выполнены!
+    {% endif %}
+</body>
+
+</html>
